@@ -13,7 +13,10 @@ db = TinyDB('database.json')
 def get_form():
     # Получаем данные формы из тела POST-запроса
     form_data = request.form
-    
+
+    # Выводим текст запроса в консоль Flask
+    print("Received form data:", form_data)
+
     # Пытаемся найти соответствующий шаблон в базе данных
     template_name = find_matching_template(form_data)
     
@@ -56,8 +59,12 @@ def validate_field(value, field_type):
         else:
             return False
     elif field_type == 'phone':
-        # Проверка, что значение соответствует стандартному формату +7 xxx xxx xx xx
-        if value.startswith('+7') and value[2:].replace(' ', '').isdigit() and len(value) == 16:
+        value = value.replace(' ', '')
+        # Проверка, что значение соответствует формату телефона
+        if (
+            ((value.startswith('+7') and len(value) == 12) or ((value.startswith('7') or value.startswith('8')) and len(value) == 11))
+            and value.isdigit()
+        ):
             return True
         else:
             return False
