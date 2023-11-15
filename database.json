@@ -1,0 +1,12 @@
+[
+    {
+        "name": "MyForm",
+        "field_name_1": "email",
+        "field_name_2": "phone"
+    },
+    {
+        "name": "OrderForm",
+        "field_name_1": "text",
+        "field_name_2": "date"
+    }
+]
