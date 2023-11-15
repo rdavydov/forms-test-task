@@ -60,10 +60,10 @@ def validate_field(value, field_type):
             return False
     elif field_type == 'phone':
         value = value.replace(' ', '')
+
         # Проверка, что значение соответствует формату телефона
         if (
-            ((value.startswith('+7') and len(value) == 12) or ((value.startswith('7') or value.startswith('8')) and len(value) == 11))
-            and value.isdigit()
+            ((value.startswith('+7') and len(value) == 12 and value[1:].isdigit()) or ((value.startswith('7') or value.startswith('8')) and len(value) == 11) and value.isdigit())
         ):
             return True
         else:
