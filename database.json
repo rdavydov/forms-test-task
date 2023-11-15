@@ -1,12 +1,1 @@
-[
-    {
-        "name": "MyForm",
-        "field_name_1": "email",
-        "field_name_2": "phone"
-    },
-    {
-        "name": "OrderForm",
-        "field_name_1": "text",
-        "field_name_2": "date"
-    }
-]
+{"_default": {"1": {"name": "MyForm", "field_name_1": "email", "field_name_2": "phone"}, "2": {"name": "OrderForm", "field_name_1": "text", "field_name_2": "date"}}}
